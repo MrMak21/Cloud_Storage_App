@@ -30,4 +30,8 @@ public class UploadServiceImpl implements UploadService {
     @Override
     public void delete(long id) { uploadJpaRepository.deleteById(id);
         }
+
+
+
+
 }

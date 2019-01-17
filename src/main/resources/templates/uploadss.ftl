@@ -80,21 +80,21 @@
                     <thead>
                     <tr>
                         <th>File</th>
+                        <th>Size</th>
                         <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
 
-                    <#list fileNameList as s>
+                    <#list test as s>
                         <tr>
-                        <td> <a href="/download1/${s}"> ${s} </a></td>
-                        <td><a class="btn btn-danger" href="/delete/${s}" name="delete">Delete</a></td>
+                        <td> <a href="/download1/${s.ref}"> ${s.ref} </a></td>
+                        <td> ${s.size}</td>
+                        <td><a class="btn btn-danger" href="/delete/${s.ref}" name="delete">Delete</a></td>
                         </tr>
 
                     </#list>
-                    <#list test as size>
-                        <h5>${size}</h5>
-                    </#list>
+
                     </tbody>
                 </table>
                 <a class="nav-link active" href="/upload">

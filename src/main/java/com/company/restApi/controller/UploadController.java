@@ -1,5 +1,6 @@
 package com.company.restApi.controller;
 
+import com.company.restApi.domain.UplObject;
 import com.company.restApi.domain.User;
 import com.company.restApi.mappers.StatusToUploadModelMapper;
 import com.company.restApi.model.UploadModel;
@@ -105,11 +106,12 @@ public class UploadController {
         File file =  new File("/home/mak21/Desktop/Spring_Projects/Cloud_App/Upload/"+name+"/");
 
         List<File> fileslist = new ArrayList<>();
+        List<UplObject> items = new ArrayList<>();
 
 
         long numberOfFiles =0;
         long sizeOfFolder = 0;
-        List size = new ArrayList();
+
 
 
         // check if the specified pathname is directory first
@@ -119,14 +121,15 @@ public class UploadController {
             for(File s:files){
 
                 fileslist.add(new File(s.getName()));
+                items.add(new UplObject(s.getName(),formatFileSize.formatFileSizes(s.length()),0));
                 numberOfFiles +=1;
                 sizeOfFolder += s.length();
-                size.add(s.length());
+
             }
         }
 
-        System.out.println(size);
-        model.addAttribute("test",size);
+
+        model.addAttribute("test",items);
 
 
 
