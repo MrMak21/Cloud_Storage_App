@@ -20,7 +20,7 @@ public class DeleteController {
 
 
 
-    private static final String DIRECTORY = "/home/mak21/Desktop/Spring_Projects/Cloud_App/Upload/";
+    private static final String DIRECTORY = "/home/panos/IdeaProjects/makcloudapp/Upload/";
 
 
     @RequestMapping("/delete/{filename}")

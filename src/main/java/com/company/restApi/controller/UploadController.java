@@ -42,7 +42,7 @@ public class UploadController {
     UploadService uploadService;
 
     //Save the uploaded file to this folder
-    private static String UPLOADED_FOLDER = "/home/mak21/Desktop/Spring_Projects/Cloud_App/Upload/";
+    private static String UPLOADED_FOLDER = "/home/panos/IdeaProjects/makcloudapp/Upload/";
 
     @GetMapping("/upload")
     public String uploading() { return "upload";
@@ -101,9 +101,9 @@ public class UploadController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String name = auth.getName(); //get logged in email
 
-        new File("/home/mak21/Desktop/Spring_Projects/Cloud_App/Upload/"+name).mkdirs();
+        new File(UPLOADED_FOLDER + name).mkdirs();
 
-        File file =  new File("/home/mak21/Desktop/Spring_Projects/Cloud_App/Upload/"+name+"/");
+        File file =  new File(UPLOADED_FOLDER + name+"/");
 
         List<File> fileslist = new ArrayList<>();
         List<UplObject> items = new ArrayList<>();
